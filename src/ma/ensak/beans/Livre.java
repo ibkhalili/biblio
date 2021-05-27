@@ -19,6 +19,10 @@ public class Livre {
 		this.stock = stock;
 	}
 
+	public Livre() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getTitre() {
 		return titre;
 	}

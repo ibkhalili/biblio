@@ -14,9 +14,9 @@ public class ConnexionDB {
 	  
     static
     {
-        String url = "jdbc:mysql://127.0.01:3306/el-khalili-biblio";
+        String url = "jdbc:mysql://127.0.01:3306/biblio?autoReconnect=true&useSSL=false";
         String user = "root";
-        String password = "";
+        String password = "root";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, user, password);

@@ -22,12 +22,12 @@ public class EtudiantDao implements IEtudiantDao {
         List<Etudiant> ls = new ArrayList<Etudiant>();
   
         while (rs.next()) {
-        	Etudiant emp = new Etudiant();
-            emp.setCin(rs.getString("cin"));
-            emp.setNom(rs.getString("nom"));
-            emp.setPrenom(rs.getString("prenom"));
-            emp.setFiliere(rs.getString("filiere"));
-            ls.add(emp);
+        	Etudiant e = new Etudiant();
+            e.setCin(rs.getString("cin"));
+            e.setNom(rs.getString("nom"));
+            e.setPrenom(rs.getString("prenom"));
+            e.setFiliere(rs.getString("filiere"));
+            ls.add(e);
         }
         return ls;
 	}
