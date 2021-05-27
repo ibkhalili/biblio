@@ -1,5 +1,18 @@
 # Application pour la Gestion de Bibliothèque
 
+# TO-DO
+
+* add /mysql to .gitignore
+
+```
+echo "/mysql" >> .gitignore
+```
+
+* create livre and emprunt(two primary keys(cin and date)) tables in database
+
+* implement & test LivreDao methods
+
+* implement & test EmpruntDao methods
 
 # Docker
 
