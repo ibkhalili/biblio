@@ -15,5 +15,5 @@ echo "/mysql" >> .gitignore
 # Run
 
 ```
-make
+make re
 ```
