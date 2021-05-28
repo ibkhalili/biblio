@@ -1,7 +1,7 @@
 NAME = run
 
-DOCKER_MYSQL = container-mysql
-DOCKER_PHPMYADMIN = container-phpmyadmin
+DOCKER_MYSQL = my-own-mysql
+DOCKER_PHPMYADMIN = my-own-phpmyadmin
 
 MYSQL_PASSWORD = root
 
