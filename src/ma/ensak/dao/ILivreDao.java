@@ -9,8 +9,8 @@ import ma.ensak.beans.Livre;
 public interface ILivreDao {
 
 	List<Livre> Lister() throws SQLException;
-	void ajouter(Livre l);
-	void modifier(Livre l);
-	void supprimer(Livre l);
+	void ajouter(Livre l) throws SQLException;
+	void modifier(Livre l) throws SQLException;
+	void supprimer(Number numero) throws SQLException;
 
 }

@@ -1,6 +1,7 @@
 package ma.ensak.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,21 +34,39 @@ public class LivreDao implements ILivreDao {
         return ls;
 	}
 
-	@Override
-	public void ajouter(Livre l) {
+	public void ajouter(Livre l) throws SQLException {
 		// TODO Auto-generated method stub
+	
+	 String query = "insert into livre(titre, date_apparition, numero_edition, stock) VALUES (?, ?, ?, ?)";
+	 PreparedStatement ps = con.prepareStatement(query);
+	 ps.setString(1, l.getTitre());
+	 ps.setDate(2, new Date(l.getDate_apparition().getTime()));
+	 ps.setString(3, l.getNumero_edition());
+	 ps.setInt(4, l.getStock().intValue());
+	 ps.executeUpdate(); // maybe we want to check the return value
+		
+	}
+	@Override
+	public void modifier(Livre l) throws SQLException {
+		// TODO Auto-generated method stub
+		String query = "update livre set titre=?, date_apparition=?, numero_edition=?, stock=? where numero=?";
+		PreparedStatement ps = con.prepareStatement(query);
+		ps.setString(1, l.getTitre());
+		ps.setDate(2, new Date(l.getDate_apparition().getTime()));
+		ps.setString(3, l.getNumero_edition());
+		ps.setInt(4, l.getStock().intValue());
+		ps.setInt(5, l.getNumero().intValue());
+		ps.executeUpdate();
 		
 	}
 
 	@Override
-	public void modifier(Livre l) {
+	public void supprimer(Number numero) throws SQLException {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void supprimer(Livre l) {
-		// TODO Auto-generated method stub
+		String query = "delete from livre where numero=?";
+		PreparedStatement ps = con.prepareStatement(query);
+		ps.setInt(1, numero.intValue());
+		ps.executeUpdate();
 		
 	}
 

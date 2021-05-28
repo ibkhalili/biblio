@@ -1,12 +1,14 @@
 package ma.ensak.dao;
 
 import ma.ensak.beans.Emprunt;
+import java.sql.SQLException;
+import java.util.List;
 
 public interface IEmpruntDao {
 
-	Emprunt []Lister();
-	void ajouter(Emprunt e);
-	void modifier(Emprunt e);
-	void supprimer(Emprunt e);
+	List<Emprunt> Lister() throws SQLException;
+	void ajouter(Emprunt e) throws SQLException;
+	void modifier(Emprunt e) throws SQLException;
+	void supprimer(Number numero) throws SQLException;
 
 }
